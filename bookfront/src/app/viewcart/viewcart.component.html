@@ -1,0 +1,24 @@
+<div class="container">
+    <h1 class="text-center display-5">Books in Cart</h1>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Book Title</th>
+
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Amount</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let c of carr">
+                <td>{{c.booktitle}}</td>
+                <td>{{c.amount/c.qty}}</td>
+                <td>{{c.qty}}</td>
+                <td>{{c.amount}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <input type="button" class="btn btn-primary" value="Confirm Order" (click)="confirm()">
+</div>

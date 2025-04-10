@@ -1,0 +1,18 @@
+<div class="container">
+    <h1 class="text-center">Available Books</h1>
+    <div class="card-group">
+
+        <div class="card col" style="width: 18rem;" *ngFor="let b of barr">
+            <img src="http://localhost:9000/bookshop/downloadFile/{{b.bookImages[0].name}}" class="card-img-top"
+                alt="..." width="200px" height="330px">
+            <div class="card-body">
+                <h5 class="card-title">{{b.bookname}}</h5>
+                <p class="card-text">{{b.author}}<br>Price {{b.price}}</p>
+
+                <a class="btn btn-primary" *ngIf="islogin" (click)="showdetails(b.id)">Add to cart</a>
+            </div>
+        </div>
+    </div>
+
+
+</div>

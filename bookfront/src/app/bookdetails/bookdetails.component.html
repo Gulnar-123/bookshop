@@ -1,0 +1,31 @@
+<div class="container">
+    <h1>Book Details</h1>
+    <div class="card mb-3" style="max-width: 740px;">
+        <div class="row g-0">
+            <div class="col-md-5">
+                <img src="http://localhost:9000/bookshop/downloadFile/{{b.bookImages[0].name}}" class="card-img-top"
+                    alt="..." width="350px" height="430px">
+
+            </div>
+            <div class="col-md-7">
+                <div class="card-body">
+                    <h5 class="card-title">Title: {{b.bookname}}</h5><br>
+                    <p class="card-text">AUthor:{{b.author}}<br><br>Type: {{b.type}}<br><br>Price: {{b.price}}
+                        <br><br> Quantity: <select class="form-select" [(ngModel)]="qty" (ngModelChange)="calamt()">
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                        </select>
+
+                    </p>
+                    <h5>Amount: {{amt}}</h5>
+
+                </div>
+
+            </div>
+            <input type="button" class="btn btn-success" value="Add to Cart" (click)="submitdata()">
+        </div>
+    </div>
+</div>

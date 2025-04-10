@@ -4,12 +4,12 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
+import com.innovation.bookshop.model.Admin;
 import com.innovation.bookshop.model.Signup;
 
 @Repository
-@Qualifier("signRepo")
-public interface SignupRepository extends JpaRepository<Signup, Integer> {
+@Qualifier("adminRepo")
 
-	Signup findByEmailAndPassword(String email,String password);
-	Signup findByEmail(String email);
+public interface Adminrepository extends JpaRepository<Admin, Integer> {
+	Admin findByEmailAndPassword(String email,String password);
 }

@@ -1,0 +1,26 @@
+<div class="container">
+    <h1 class="text-center display-5">Order Details</h1>
+    <h2>Order No : {{ono}}</h2>
+    <h3>Email Id :{{bo.emailid}}</h3>
+    <h3>Date :{{bo.dt}}</h3>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Book Title</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th>Amount</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let bd of bo.booklst">
+                <td>{{bd.booktitle}}</td>
+                <td>{{bd.qty}}</td>
+                <td>{{bd.price}}</td>
+                <td>{{bd.amt}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <h4>Total Amount= {{bo.totalamt}}</h4>
+</div>

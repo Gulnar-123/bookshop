@@ -1,0 +1,33 @@
+<div class="container">
+
+    <h1 class="text-center display-4">Valuable Feedbacks</h1>
+    <div class="card" style="width: 18rem;" *ngFor="let fd of farr">
+        <div class="card-body">
+            <h5 class="card-title">{{fd.email}}</h5>
+            <h6 class="card-subtitle mb-2 text-body-secondary">
+                <app-rating [rating]="fd.rating" [readonly]="true" />
+            </h6>
+            <p class="card-text">
+                {{fd.message}}
+
+            </p>
+
+        </div>
+    </div>
+    <form (ngSubmit)="submitdata()" *ngIf="islogin">
+
+        <div class="mb-3">
+            <label for="email" class="form-label">Message</label>
+            <textarea class="form-control" id="email" name="msg" [(ngModel)]="f.message">
+            </textarea>
+
+
+        </div>
+        <div class="mb-3">
+            <label for="pass" class="form-label">Ratings</label>
+            <app-rating [readonly]="false" />
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>

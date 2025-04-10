@@ -1,0 +1,36 @@
+<div class="container">
+    <h1 class="text-center display-5">Recent Orders</h1>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>orderno</th>
+                <th>emailid</th>
+                <th>date</th>
+                <th>status</th>
+                <th>total amount</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let ba of barr">
+                <td>
+                    {{ba.orderno}}
+                </td>
+                <td>
+                    {{ba.emailid}}
+                </td>
+                <td>
+                    {{ba.dt}}
+                </td>
+                <td>{{ba.status}}</td>
+                <td>
+                    {{ba.totalamt}}
+                </td>
+                <td>
+                    <a (click)="showdetails(ba.orderno)"> <i class="fa fa-info-circle text-success"
+                            style="font-size: 25px;" aria-hidden="true"></i></a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

@@ -39,7 +39,7 @@ public class BookController {
 	    private FileStorageService fileStorageService;
 
 	 
-	@RequestMapping("/Books")
+	@RequestMapping("/books")
 	public ArrayList<Book> getAll()
 	{
 		ArrayList<Book> ls=(ArrayList<Book>)bs.findAll();
@@ -47,7 +47,7 @@ public class BookController {
 		
 	}
 	@PostMapping(value= {"/books"},consumes= {MediaType.MULTIPART_FORM_DATA_VALUE})
-	public Book insertrecord(@RequestPart("Book") Book e,@RequestPart("imageFile") MultipartFile[] files)
+	public Book insertrecord(@RequestPart("book") Book e,@RequestPart("imageFile") MultipartFile[] files)
 	{
 		try {
 			Set<ImageModel> images=uploadImages(files);

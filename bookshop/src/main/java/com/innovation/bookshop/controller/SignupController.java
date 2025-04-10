@@ -66,4 +66,10 @@ public class SignupController {
 		Signup sp=ss.login(em, ps);
 		return new ResponseEntity<Signup>(sp,HttpStatus.OK);
 	}
+	@GetMapping("/checksignup/{em}")
+	public ResponseEntity<Signup> login1(@PathVariable("em") String em)
+	{
+		Signup sp=ss.checkemail(em);
+		return new ResponseEntity<Signup>(sp,HttpStatus.OK);
+	}
 }

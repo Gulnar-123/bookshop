@@ -25,6 +25,7 @@ public class BookOrder {
 	@JoinColumn(name = "orderno")
 	
 	private List<BookOrderDetail> booklst;
+	
 	public BookOrder() {
 		super();
 		// TODO Auto-generated constructor stub

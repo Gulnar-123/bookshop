@@ -10,30 +10,61 @@ public class BookOrderDetail {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int srno;
-	private int bookid,qty,price,amt;
+	private String booktitle;
+	private int qty,price,amt;
 
 	public BookOrderDetail() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public BookOrderDetail( int bookid, int qty, int price, int amt) {
+	
+
+	
+
+	public BookOrderDetail(String booktitle, int qty, int price, int amt) {
 		super();
-		
-		this.bookid = bookid;
+		this.booktitle = booktitle;
 		this.qty = qty;
 		this.price = price;
 		this.amt = amt;
 	}
 
-	
-	public int getBookid() {
-		return bookid;
+
+
+
+
+	public int getSrno() {
+		return srno;
 	}
 
-	public void setBookid(int bookid) {
-		this.bookid = bookid;
+
+
+
+
+	public void setSrno(int srno) {
+		this.srno = srno;
 	}
+
+
+
+
+
+	public String getBooktitle() {
+		return booktitle;
+	}
+
+
+
+
+
+	public void setBooktitle(String booktitle) {
+		this.booktitle = booktitle;
+	}
+
+
+
+
 
 	public int getQty() {
 		return qty;
@@ -59,10 +90,6 @@ public class BookOrderDetail {
 		this.amt = amt;
 	}
 
-	@Override
-	public String toString() {
-		return "bookOrderDetail [ bookid=" + bookid + ", qty=" + qty + ", price=" + price
-				+ ", amt=" + amt + "]";
-	}
+	
 	
 }

@@ -62,6 +62,12 @@ public class SignupServiceImpl implements SignupService {
 		// TODO Auto-generated method stub
 		return signRepo.findByEmailAndPassword(em, ps);
 	}
+
+	@Override
+	public Signup checkemail(String em) {
+		// TODO Auto-generated method stub
+		return signRepo.findByEmail(em);
+	}
 	
 
 }

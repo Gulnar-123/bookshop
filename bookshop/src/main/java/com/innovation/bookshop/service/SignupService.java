@@ -11,4 +11,5 @@ void deleteById(int id);
 Signup update(int id,Signup ns);
 Signup search(int id);
 Signup login(String em,String ps);
+Signup checkemail(String em);
 }

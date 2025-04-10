@@ -1,0 +1,113 @@
+<div class="container">
+    <h1 class="text-center display-4">Register Here</h1>
+    <form #regForm="ngForm" (ngSubmit)="submitdata(regForm)">
+
+        <div class="mb-3">
+            <div class="mb-3">
+                <label for="nm" class="form-label">Name</label>
+                <input type="text" class="form-control" id="nm" name="nm" #nm="ngModel" [(ngModel)]="s.name" required
+                    pattern="^[a-zA-Z\s]+$">
+                <div *ngIf="!nm.valid" style="color: red;">
+                    <div *ngIf="nm.errors?.['required']">
+                        Name is required
+                    </div>
+                    <div *ngIf="nm.errors?.['pattern']">
+                        Only alphabets allowed
+                    </div>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="add" class="form-label">Address</label>
+                <input type="text" class="form-control" id="add" name="add" #add="ngModel" [(ngModel)]="s.address"
+                    required>
+                <div *ngIf="!add.valid" style="color: red;">
+                    <div *ngIf="add.errors?.['required']">
+                        Address is required
+                    </div>
+
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="ct" class="form-label">City</label>
+                <select class="form-select" id="ct" name="ct" #ct="ngModel" [(ngModel)]="s.city" required
+                    pattern="^[a-zA-Z\s]+$">
+
+                    <option value="">--select--</option>
+                    <option>Satara</option>
+                    <option>Pune</option>
+                    <option>Mumbai</option>
+                </select>
+                <div *ngIf="!ct.valid" style="color: red;">
+                    <div *ngIf="ct.errors?.['required']">
+                        City Name is required
+                    </div>
+
+
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="gender" class="form-label">Gender</label>
+
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="gender" #gender="ngModel" value="Male"
+                        id="radio1" [(ngModel)]="s.gender" required>
+                </div>
+                <label class="form-check-label" for="radioDefault1">
+                    Male
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="gender" value="Female" id="radio2"
+                    [(ngModel)]="s.gender" required>
+                <label class="form-check-label" for="radioDefault2">
+                    Female
+                </label>
+            </div>
+            <div *ngIf="!gender.valid" style="color: red;">
+                <div *ngIf="gender.errors?.['required']">
+                    Gender must be selected.
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label for="mob" class="form-label">Mobile Number</label>
+                <input type="tel" class="form-control" id="mob" name="mob" #mob="ngModel" [(ngModel)]="s.mobileno"
+                    required pattern="^[6-9][0-9]{9}$">
+                <div *ngIf="!mob.valid" style="color: red;">
+                    <div *ngIf="mob.errors?.['required']">
+                        mobile no is required
+                    </div>
+                    <div *ngIf="mob.errors?.['pattern']">
+                        Only 10 digits allowed
+                    </div>
+
+                </div>
+            </div>
+            <label for="email" class="form-label">Email address</label>
+            <input type="email" class="form-control" id="email" aria-describedby="emailHelp" name="em" #em="ngModel"
+                [(ngModel)]="s.email" required>
+
+            <div *ngIf="!em.valid" style="color: red;">
+                <div *ngIf="em.errors?.['required']">
+                    Email is required
+                </div>
+            </div>
+            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+        </div>
+        <div class="mb-3">
+            <label for="pass" class="form-label">Password</label>
+            <input type="password" class="form-control" id="pass" name="ps" #ps="ngModel" [(ngModel)]="s.password"
+                required pattern="^[a-zA-Z0-9!@#$%]{8,15}$">
+            <div *ngIf="!ps.valid" style="color: red;">
+                <div *ngIf="ps.errors?.['required']">
+                    Password is required
+                </div>
+                <div *ngIf="ps.errors?.['pattern']">
+                    Insert valid password
+                </div>
+            </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary" name="btn" [disabled]="!regForm.valid">Submit</button>
+    </form>
+</div>

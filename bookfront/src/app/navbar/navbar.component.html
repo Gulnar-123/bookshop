@@ -1,0 +1,35 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+        <a class="navbar-brand" routerLink="/">Online Bookshop</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup" [ngSwitch]="usertype">
+            <div class="navbar-nav" *ngSwitchCase="'guest'">
+                <a class="nav-link active" aria-current="page" routerLink="/">Home</a>
+                <a class="nav-link" routerLink="/books">Books</a>
+                <a class="nav-link" routerLink="/feedback">Feedback</a>
+                <a class="nav-link" routerLink="/register">Register</a>
+                <a class="nav-link" routerLink="/login">Login</a>
+                <a class="nav-link" routerLink="/alogin">Admin Login</a>
+            </div>
+            <div class="navbar-nav" *ngSwitchCase="'user'">
+                <a class="nav-link active" aria-current="page" routerLink="/">Home</a>
+                <a class="nav-link" routerLink="/books">Books</a>
+                <a class="nav-link" routerLink="/feedback">Feedback</a>
+                <a class="nav-link" routerLink="/viewcart">View Cart</a>
+                <a class="nav-link" (click)="ulogout()">Logout</a>
+
+            </div>
+            <div class="navbar-nav" *ngSwitchCase="'admin'">
+                <a class="nav-link active" aria-current="page" routerLink="/">Home</a>
+                <a class="nav-link" routerLink="/mngbooks">Books</a>
+                <a class="nav-link" routerLink="/vfeedback">Feedback</a>
+                <a class="nav-link" routerLink="/vorders">View Orders</a>
+                <a class="nav-link" (click)="alogout()">Logout</a>
+
+            </div>
+        </div>
+    </div>
+</nav>
